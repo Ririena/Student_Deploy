@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.vs-input__wrapper {
+    width: 100%;
+}
+
