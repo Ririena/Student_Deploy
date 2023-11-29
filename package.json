@@ -30,6 +30,7 @@
     "@vue-hero-icons/solid": "^1.7.2",
     "@vueform/nuxt": "^1.4.0",
     "@vuesax-alpha/icons-vue": "^0.0.2-beta.12",
+    "axios": "^1.6.2",
     "boxicons": "^2.1.4",
     "framer-motion": "^10.16.5",
     "maz-ui": "^3.28.6",
