@@ -1,7 +1,7 @@
 
 <template>
   <div class="container mx-auto">
-    <div class="card w-138 glass mx-auto mt-6 xs:w-full sm:w-full md:w-full lg:w-96 xl:">
+    <div class="card w-138 glass mx-auto mt-6 xs:w-full sm:w-full md:w-full lg:w-96 xl:w-6/12">
       <!-- <figure>
         <img
           src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -27,7 +27,7 @@
                 placeholder="....."
                 class="textarea textarea-bordered textarea-md w-full textarea-primary"
                 v-model="PostKomen"
-              ></textarea>
+              ></textarea>  
               <div class="modal-action">
                 <form method="dialog">
                   <!-- if there is a button in form, it will close the modal -->
@@ -65,7 +65,7 @@
       </div>
     </div>
   </div>
-  <div v-for="(item, index) in PostData" class="card w-138 glass mx-auto mt-6  xs:w-full sm:w-full md:w-96 lg:96 xl:128">
+  <div v-for="(item, index) in PostData" class="card w-138 glass mx-auto mt-6  xs:w-full sm:w-full md:w-96 lg:w-96 xl:w-6/12">
     <div class="card-body">
       <div class="shadow-sm">
         <div class="avatar">
