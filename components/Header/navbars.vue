@@ -27,7 +27,7 @@
         >
           <i
             class="ri-home-5-line py-1 hover:bg-slate-300 text-xl font-semibold"
-            ><NuxtLink class="flex-1 px-2" to="/">Home</NuxtLink></i
+            ><NuxtLink class="flex-1 px-2" to="/home">Home</NuxtLink></i
           >
           <i
             class="ri-compass-3-fill py-1 hover:bg-slate-300 text-xl font-semibold"

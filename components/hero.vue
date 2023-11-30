@@ -1,5 +1,5 @@
 <template>
-   <div
+    <div
       class="hero-section bg-gradient-to-r from-blue-500 to-purple-500 text-white"
     >
       <div class="container mx-auto p-8 text-center">
@@ -17,6 +17,7 @@
   
   <style scoped>
   .hero-section {
+    /* Sesuaikan tinggi hero section dengan kebutuhan */
     height: 80vh;
     display: flex;
     flex-direction: column;
