@@ -1,7 +1,7 @@
-i
+
 <template>
   <div class="container mx-auto">
-    <div class="card w-138 glass mx-auto mt-6 xs:72 sm:72 md:72 lg:128">
+    <div class="card w-138 glass mx-auto mt-6 xs:w-full sm:w-full md:w-full lg:w-96 xl:">
       <!-- <figure>
         <img
           src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -65,7 +65,7 @@ i
       </div>
     </div>
   </div>
-  <div v-for="(item, index) in PostData" class="card w-138 glass mx-auto mt-6">
+  <div v-for="(item, index) in PostData" class="card w-138 glass mx-auto mt-6  xs:w-full sm:w-full md:w-96 lg:96 xl:128">
     <div class="card-body">
       <div class="shadow-sm">
         <div class="avatar">
@@ -80,7 +80,7 @@ i
           <h1 class="font-semibold active:font-extralight" src="/">
             {{ item.Profiles.email }}
           </h1>
-          <h1 class="text-sm">18 Jam Yang Lalu</h1>
+          <h1 class="text-sm"></h1>
         </div>
 
         <h2 class="card-title border-t">{{ item.title }}</h2>
@@ -101,7 +101,10 @@ i
           @click="($event) => buatKomen(item)"
           onclick="my_modal_4.showModal()"
         ></i>
-
+        <i
+      class="btn ri-delete-bin-6-line transition-all ease-in-out delay-200 hover:-translate-y-1 hover:scale-110 text-red-500"
+      @click="deletePost(item.id)"
+    ></i> 
         <i
           class="ri-heart-add-line transition-all ease-in-out delay-200 hover:-translate-y-1 hover:scale-110 btn"
         ></i>
@@ -112,6 +115,20 @@ i
     </div>
     <div class="bg-white p-5">
       <div class="chat chat-start" v-for="(d, s) in item.Comments">
+        <div
+  class="ml-4 flex justify-between text-xl relative"
+  @mouseover="showDeleteIcon = true"
+  @mouseleave="showDeleteIcon = false"
+>
+  <!-- ... (other comment icons) ... -->
+
+  <!-- Add this floating delete button for comments -->
+  <i
+    v-show="showDeleteIcon"
+    class="btn ri-delete-bin-6-line transition-all ease-in-out delay-200 hover:-translate-y-1 hover:scale-110 text-red-500 absolute top-0 right-0 -mt-2 -mr-2 cursor-pointer"
+    @click="deleteComment(item.id, d.id)"
+  ></i>
+</div>
         <div class="chat-image avatar">
           <div class="w-10 rounded-full">
             <img
@@ -147,11 +164,13 @@ const route = useRoute();
 const userPost = ref({});
 const tanggalPost = ref({});
 const PostData = ref([]);
+const PostDelete = ref({});
 
 const PostKonten = ref("");
 const PostTitle = ref("");
 const PostGambar = ref(null);
 const PostKomen = ref("");
+
 const dialogId = ref(null);
 const dialogContent = ref("");
 
@@ -188,6 +207,28 @@ async function submit() {
 
   init();
 }
+
+
+async function deletePost(postId) {
+  const { data, error } = await supabase.from("Posts").delete().eq("id", postId);
+
+  if (error) {
+    console.error("Error deleting post:", error.message);
+    VsNotification({
+      title: "Error",
+      text: "Failed to delete post.",
+      color: "danger",
+    });
+  } else {
+    VsNotification({
+      title: "Post Deleted",
+      text: "Post has been successfully deleted.",
+      color: "success",
+    });
+    init(); // Refresh the posts after deletion
+  }
+}
+
 
 async function buatKomen(post) {
   console.log(post.id);

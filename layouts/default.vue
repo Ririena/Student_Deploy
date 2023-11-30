@@ -1,4 +1,3 @@
 <template>
   <HeaderNavbars />
-  <HeaderBottom />
 </template>

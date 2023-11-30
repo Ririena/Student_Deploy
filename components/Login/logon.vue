@@ -1,7 +1,8 @@
 <template>
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-    <img class="mx-auto h-10 w-auto" src="" alt="Logo Books">
+    <img class="mx-auto h-20 w-20" src="https://t4.ftcdn.net/jpg/04/92/24/55/360_F_492245515_B06u4GqjtSox45R7iDOCLIamWIJipzFT.jpg" alt="Logo Books">
+    <h1 class="text-center text-blue-500 text-4xl">Studen<a class="text-sky-900">t Books</a></h1>
     <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
   </div>
 
@@ -31,8 +32,8 @@
     </form>
 
     <p class="mt-10 text-center text-sm text-gray-500">
-      Not a member?
-      <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Start a 14 day free trial</a>
+      Belum Punya Akun?
+      <NuxtLink to="/signup" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Ayo buat Akun Buku K</NuxtLink>
     </p>
   </div>
 </div>
@@ -69,6 +70,6 @@ async function submit($event) {
     position: "bottom-center",
   });
 
-  await navigateTo("/user");
+  await navigateTo("/user/me");
 }
 </script>

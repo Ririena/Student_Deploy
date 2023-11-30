@@ -12,7 +12,6 @@ module.exports = {
     "./app.vue",
     "./error.vue",
   ],
-  theme: {
     extend: {
       margin: {
         92: "340px",
@@ -29,9 +28,10 @@ module.exports = {
         xl: "1280px",
       },
     },
-  },
   plugins: [require("daisyui"), 
   require('@vueform/vueform/tailwind'),],
 
-  daisyui: {},
+  daisyui: {
+    themes: ['cupcake']
+  },
 };

@@ -6,9 +6,7 @@
       >
         <div class="h-96 overflow-hidden">
           <!-- Larger cover image -->
-          <button class="btn absolute mt-92" onclick="my_modal_2.showModal()">
-            Edit Cover
-          </button>
+     
           <dialog id="my_modal_2" class="modal">
             <div class="modal-box">
               <button
