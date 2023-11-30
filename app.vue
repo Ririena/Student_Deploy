@@ -15,7 +15,7 @@ async function init() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // if(!user) navigateTo('/login'); 
+  // if(!user) navigateTo('/login') else(); 
 }
 
 init();
