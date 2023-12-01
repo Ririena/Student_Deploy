@@ -6,33 +6,45 @@ export default defineNuxtConfig({
   },
 
   modules: [
-   '@vite-pwa/nuxt' ,'@vueform/nuxt', 
+   "@vite-pwa/nuxt" ,"@vueform/nuxt", 
   ],
 
   pwa: {
     manifest: {
-      name: "StudentBooks",
+      name: "Students_Books",
       short_name: "StudBooks",
-      theme_color: '#fff',
-      background_color: '#fff',
+      theme_color: "#fff",
       display: "standalone",
       orientation: "portrait",
       scope: "/",
       start_url: "/",
       icons: [
         {
-          src: "images/icons/duivion.jpg",
+          src: "images/icons/logo.png",
           sizes: "144x144",
-          type: "image/png",
-        },
+          type: "image/jpg",
+        }, 
         {
-          src: "images/icons/duivsion.jpg",
+          src: "public/images/icons/logo.png",
           sizes: "512x512",
           type: "image/png",
         },
+        {
+          src: "images/icons/duivion.jpg",
+          sizes: "96x96",
+          type: "image/jpg",
+        },
+        {
+          src: "images/icons/duivion.jpg",
+          sizes: "256x256",
+          type: "image/jpg",
+        },
       ],
-    },
+    }, devOptions: {
+      enabled: true,
+    }
   },
+
 
   build: {
     transpile: ["vuetify"],
